@@ -10,18 +10,22 @@ public abstract class Conta implements IConta {
     private static int SEQUENCIAL = 1;
     private static final double LIMITE_PADRAO = 3000;
 
+    // Conta Poupança
+    protected double rendimentos;
+    // Conta Corrente
+    protected double debitos;
     protected int agencia;
     protected int numero;
     protected double saldo;
     protected Cliente cliente;
-    protected double limite;
+    protected double limiteEmprestimo;
 
     public Conta(Cliente cliente) {
         this.agencia = Conta.AGENCIA_PADRAO;
         this.numero = Conta.SEQUENCIAL++;
         this.saldo = saldo;
         this.cliente = cliente;
-        this.limite =  LIMITE_PADRAO;
+        this.limiteEmprestimo =  LIMITE_PADRAO;
     }
 
     @Override
