@@ -8,17 +8,20 @@ import javax.swing.*;
 public abstract class Conta implements IConta {
     private static int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
+    private static final double LIMITE_PADRAO = 3000;
 
     protected int agencia;
     protected int numero;
     protected double saldo;
     protected Cliente cliente;
+    protected double limite;
 
     public Conta(Cliente cliente) {
         this.agencia = Conta.AGENCIA_PADRAO;
         this.numero = Conta.SEQUENCIAL++;
         this.saldo = saldo;
         this.cliente = cliente;
+        this.limite =  LIMITE_PADRAO;
     }
 
     @Override

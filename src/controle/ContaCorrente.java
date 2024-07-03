@@ -22,8 +22,6 @@ public class ContaCorrente extends Conta {
         System.out.println("=== Extrato Empréstimo ===");
         super.imprimirInfosComuns(); // Imprime informações comuns da conta
 
-        double limite = 3000;
-
         if (valor > limite) {
             System.out.println("Empréstimo negado");
             return;
