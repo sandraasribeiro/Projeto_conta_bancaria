@@ -46,12 +46,11 @@ public class ContaCorrente extends Conta {
 
   @Override
   public void emprestar(double valor, Conta contaDestino) {
-
-    System.out.println("=== Extrato Empréstimo ===");
-    super.imprimirInfosComuns(); // Imprime informações comuns da conta
+    JFrame f;
+    f = new JFrame();
 
     if (valor > limiteEmprestimo) {
-      System.out.println("Empréstimo negado");
+      JOptionPane.showMessageDialog(f, "Valor acima do limite disponível");
       return;
     }
 
@@ -59,7 +58,10 @@ public class ContaCorrente extends Conta {
 
     System.out.println("Saldo anterior: " + saldo);
     contaDestino.depositar(valor);
-    System.out.println("Saldo atual: " + saldo);
+    // System.out.println("Saldo atual: " + saldo);
+
+     System.out.println("=== Extrato Empréstimo ===");
+    super.imprimirInfosComuns(); // Imprime informações comuns da conta
 
     debitos = valor * TAXA_JUROS;
     System.out.println("Débito bancário: " + debitos);

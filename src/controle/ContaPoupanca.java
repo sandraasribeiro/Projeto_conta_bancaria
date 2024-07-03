@@ -4,7 +4,7 @@ import modelo.Cliente;
 
 public class ContaPoupanca extends Conta {
 
-  private static final double RENDIMENTO = 1.01;
+  private static final double RENDIMENTO = 0.05;
 
   public ContaPoupanca(Cliente cliente) {
     super(cliente);
@@ -37,7 +37,7 @@ public class ContaPoupanca extends Conta {
     System.out.println("Rendimentos: " + rendimentos);
 
     System.out.println("Saldo antigo: " + saldo);
-    saldo -= valor;
+    saldo += valor;
     System.out.println("Novo saldo: " + saldo);
   }
 }

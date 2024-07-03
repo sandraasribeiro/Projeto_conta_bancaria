@@ -35,7 +35,7 @@ public class Main {
               Integer.parseInt(
                   JOptionPane.showInputDialog(
                       f,
-                      "0 - Sair, 1 - Saldo, 2 - Sacar, 3 - Deposito, 4 - Transferencia para Poupança, 5 - Emprestimo, 6 - Juros sobre o saldo da Poupança"));
+                      "0 - Sair, 1 - Saldo, 2 - Sacar, 3 - Deposito, 4 - Transferencia para Poupança, 5 - Emprestimo"));
           if (movimentoC == 0) break;
           if (movimentoC == 1) cc.imprimirExtrato();
           if (movimentoC == 2) {
@@ -62,22 +62,16 @@ public class Main {
             double valor =
                 Double.parseDouble(
                     JOptionPane.showInputDialog(f, "Digite o valor para emprestimo"));
-            cc.emprestimo(valor, cc);
+            cc.emprestar(valor, cc);
             cc.imprimirExtrato();
           }
-          // if(movimentoC == 6) {
-          // //     double valor = Double.parseDouble(JOptionPane.showInputDialog(f, "Digite o valor
-          // para emprestimo"));
-          // //     pp.emprestimo(valor, cc);
-          // //     pp.imprimirExtrato();
-          // // }
-          break;
+
         case 2:
           int movimentoP =
               Integer.parseInt(
                   JOptionPane.showInputDialog(
                       f,
-                      "0 - Sair, 1 - Saldo, 2 - Sacar, 3 - Deposito, 4 - Transferencia para Poupança"));
+                      "0 - Sair, 1 - Saldo, 2 - Sacar, 3 - Deposito, 4 - Transferencia para Poupança, 5 - Juros sobre o saldo da Poupança"));
           if (movimentoP == 0) break;
           if (movimentoP == 1) pp.imprimirExtrato();
           if (movimentoP == 2) {
@@ -95,11 +89,17 @@ public class Main {
           }
           if (movimentoP == 4) {
             double valor =
-                Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor da transferência "));
+            Double.parseDouble(
+            JOptionPane.showInputDialog(f, "Entre com o valor da transferência "));
             pp.transferir(valor, cc);
             pp.imprimirExtrato();
           }
+
+          if (movimentoP == 5) {
+            double valor = Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor para poupar"));
+            pp.investir(valor, pp);
+            pp.imprimirExtrato();
+            }
           break;
       }
     }
