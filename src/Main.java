@@ -97,7 +97,7 @@ public class Main {
           }
 
           if (movimentoP == 5) {
-            double valor = Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor para poupar"));
+            double valor = Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor para poupar."));
             pp.investir(valor, pp);
             pp.imprimirExtrato();
             }
