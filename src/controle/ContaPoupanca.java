@@ -4,8 +4,6 @@ import modelo.Cliente;
 
 public class ContaPoupanca extends Conta {
 
-  private static final double RENDIMENTO = 0.05;
-
   public ContaPoupanca(Cliente cliente) {
     super(cliente);
   }
@@ -16,28 +14,18 @@ public class ContaPoupanca extends Conta {
     super.imprimirInfosComuns();
   }
 
-/*  @Override
-  public void emprestimo(double valor, Conta contaDestino) {
-    rendimentos = valor * RENDIMENTO;
-    System.out.println("Rendimentos: " + rendimentos);
-
-    System.out.println("Saldo antigo: " + saldo);
-    saldo -= valor;
-    System.out.println("Novo saldo: " + saldo);
-  }*/
-
   @Override
   public void emprestar(double valor, Conta contaDestino) {
     throw new UnsupportedOperationException("Empréstimo não disponível para Conta Poupança");
   }
 
   @Override
-  public void investir(double valor, Conta contaDestino) {
-    rendimentos = valor * RENDIMENTO;
+  public void investir(double percentualJuros, Conta contaDestino) {
+    rendimentos = (saldo * percentualJuros/100);
     System.out.println("Rendimentos: " + rendimentos);
 
     System.out.println("Saldo antigo: " + saldo);
-    saldo += valor;
+    saldo += rendimentos;
     System.out.println("Novo saldo: " + saldo);
   }
 }

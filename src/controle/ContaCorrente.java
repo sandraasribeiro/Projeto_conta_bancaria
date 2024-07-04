@@ -19,26 +19,6 @@ public class ContaCorrente extends Conta {
     super.imprimirInfosComuns();
   }
 
-/*  @Override
-  public void emprestimo(double valor, Conta contaDestino) {
-    System.out.println("=== Extrato Empréstimo ===");
-    super.imprimirInfosComuns(); // Imprime informações comuns da conta
-
-    if (valor > limiteEmprestimo) {
-      System.out.println("Empréstimo negado");
-      return;
-    }
-
-    System.out.println("Empréstimo aceito");
-
-    System.out.println("Saldo anterior: " + saldo);
-    contaDestino.depositar(valor);
-    System.out.println("Saldo atual: " + saldo);
-
-    debitos = valor * TAXA_JUROS;
-    System.out.println("Débito bancário: " + debitos);
-  }*/
-
   @Override
   public void investir(double valor, Conta contaDestino) {
     throw new UnsupportedOperationException("Investimento não disponível para Conta Corrente");
@@ -58,10 +38,9 @@ public class ContaCorrente extends Conta {
 
     System.out.println("Saldo anterior: " + saldo);
     contaDestino.depositar(valor);
-    // System.out.println("Saldo atual: " + saldo);
 
      System.out.println("=== Extrato Empréstimo ===");
-    super.imprimirInfosComuns(); // Imprime informações comuns da conta
+    super.imprimirInfosComuns();
 
     debitos = valor * TAXA_JUROS;
     System.out.println("Débito bancário: " + debitos);

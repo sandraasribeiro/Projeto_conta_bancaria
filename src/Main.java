@@ -4,10 +4,7 @@ import controle.ContaPoupanca;
 import modelo.Cliente;
 import javax.swing.*;
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
   public static void main(String[] args) {
 
     CriarBanco();
@@ -16,19 +13,20 @@ public class Main {
   private static void CriarBanco() {
     JFrame f;
     f = new JFrame();
-    String nome = JOptionPane.showInputDialog(f, "Entre Nome do Cliente");
+    String nome = JOptionPane.showInputDialog(f, "Entre o Nome do Cliente");
     Cliente cliente = new Cliente();
     cliente.setNome(nome);
     Conta cc = new ContaCorrente(cliente);
     Conta pp = new ContaPoupanca(cliente);
-    while (true) {
+    boolean fim=true;
+    while (fim) {
       int tipoConta =
           Integer.parseInt(
-              JOptionPane.showInputDialog(
-                  f,
-                  "Entre  com o tipo da conta: 0 - Sair, 1 - Conta Corrente, 2 - Conta Poupança "));
+              JOptionPane.showInputDialog(f,"Entre  com o tipo da conta: 0 - Sair, 1 - Conta Corrente, 2 - Conta Poupança "));
       switch (tipoConta) {
         case 0:
+        fim = false;
+        JOptionPane.showMessageDialog(f, "Obrigada!");
           break;
         case 1:
           int movimentoC =
@@ -61,7 +59,7 @@ public class Main {
           if (movimentoC == 5) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Digite o valor para emprestimo"));
+                    JOptionPane.showInputDialog(f, "Digite o percentual de juros"));
             cc.emprestar(valor, cc);
             cc.imprimirExtrato();
           }
@@ -71,8 +69,11 @@ public class Main {
               Integer.parseInt(
                   JOptionPane.showInputDialog(
                       f,
-                      "0 - Sair, 1 - Saldo, 2 - Sacar, 3 - Deposito, 4 - Transferencia para Poupança, 5 - Juros sobre o saldo da Poupança"));
-          if (movimentoP == 0) break;
+                      "0 - Sair, 1 - Saldo, 2 - Sacar, 3 - Deposito, 4 - Transferencia para Conta Corrente, 5 - Juros sobre o saldo da Poupança"));
+          if (movimentoP == 0) {
+          JOptionPane.showMessageDialog(f,"Obrigada!");
+                      break;
+          }
           if (movimentoP == 1) pp.imprimirExtrato();
           if (movimentoP == 2) {
             double valor =
@@ -101,6 +102,7 @@ public class Main {
             pp.imprimirExtrato();
             }
           break;
+        
       }
     }
   }

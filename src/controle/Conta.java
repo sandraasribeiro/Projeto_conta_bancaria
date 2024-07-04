@@ -35,14 +35,13 @@ public abstract class Conta implements IConta {
             JOptionPane.showMessageDialog(null, "Saldo Insuficiente");
             saldo += valor;
         }
-        //saldo = saldo - valor;
 
     }
 
     @Override
     public void depositar(double valor) {
         saldo += valor;
-        //saldo = saldo + valor;
+
     }
 
     @Override
