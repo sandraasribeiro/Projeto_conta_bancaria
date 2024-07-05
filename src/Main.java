@@ -45,21 +45,21 @@ public class Main {
           if (movimentoC == 3) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor do depósito "));
+                    JOptionPane.showInputDialog(f, "Entre com o valor do DEPÓSITO "));
             cc.depositar(valor);
             cc.imprimirExtrato();
           }
           if (movimentoC == 4) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor da transferência "));
+                    JOptionPane.showInputDialog(f, "Entre com o valor da TRANSFERENCIA "));
             cc.transferir(valor, pp);
             cc.imprimirExtrato();
           }
           if (movimentoC == 5) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Digite o percentual de juros"));
+                    JOptionPane.showInputDialog(f, "Entre com o PERCENTUAL DE JUROS"));
             cc.emprestar(valor, cc);
             cc.imprimirExtrato();
           }
@@ -77,21 +77,21 @@ public class Main {
           if (movimentoP == 1) pp.imprimirExtrato();
           if (movimentoP == 2) {
             double valor =
-                Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor da saque"));
+                Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor da SAQUE"));
             pp.sacar(valor);
             pp.imprimirExtrato();
           }
           if (movimentoP == 3) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor do depósito "));
+                    JOptionPane.showInputDialog(f, "Entre com o valor do DEPÓSITO "));
             pp.depositar(valor);
             pp.imprimirExtrato();
           }
           if (movimentoP == 4) {
             double valor =
             Double.parseDouble(
-            JOptionPane.showInputDialog(f, "Entre com o valor da transferência "));
+            JOptionPane.showInputDialog(f, "Entre com o valor da TRANSFERENCIA "));
             pp.transferir(valor, cc);
             pp.imprimirExtrato();
           }
